@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>AhmadBinMasood.MathLibrary</id>
+    <version>1.0.0</version>
+    <title>MathLibrary</title>
+    <authors>AhmadBinMasood</authors>
+    <license type="file">License.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <readme>ReadMe.md</readme>
+    <description>A simple math library for basic calculations</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="E:\EAD\Programs\math_library\math_library\bin\Debug\net8.0\math_library.dll" target="lib\net8.0\math_library.dll" />
+    <file src="E:\EAD\Programs\math_library\License.txt" target="\License.txt" />
+    <file src="E:\EAD\Programs\math_library\ReadMe.md" target="\ReadMe.md" />
+  </files>
+</package>
