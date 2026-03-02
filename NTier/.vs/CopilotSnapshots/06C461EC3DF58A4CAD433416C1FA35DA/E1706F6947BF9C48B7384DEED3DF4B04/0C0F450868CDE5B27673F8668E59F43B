@@ -1,0 +1,11 @@
+﻿// See https://aka.ms/new-console-template for more information
+namespace n_tier
+{
+    class nTier
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
