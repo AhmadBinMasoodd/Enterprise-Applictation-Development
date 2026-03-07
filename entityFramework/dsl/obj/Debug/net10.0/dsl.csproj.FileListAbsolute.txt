@@ -1,0 +1,13 @@
+E:\EAD\Programs\entityFramework\dsl\bin\Debug\net10.0\dsl.deps.json
+E:\EAD\Programs\entityFramework\dsl\bin\Debug\net10.0\dsl.dll
+E:\EAD\Programs\entityFramework\dsl\bin\Debug\net10.0\dsl.pdb
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\dsl.GeneratedMSBuildEditorConfig.editorconfig
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\dsl.AssemblyInfoInputs.cache
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\dsl.AssemblyInfo.cs
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\dsl.csproj.CoreCompileInputs.cache
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\dsl.sourcelink.json
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\dsl.dll
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\refint\dsl.dll
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\dsl.pdb
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\ref\dsl.dll
+E:\EAD\Programs\entityFramework\dsl\obj\Debug\net10.0\dsl.csproj.AssemblyReference.cache

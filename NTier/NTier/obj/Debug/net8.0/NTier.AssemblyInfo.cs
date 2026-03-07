@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NTier")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+909577bf01720395aaa9f3dd82ca7e140ba9365a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c5a579b0ad2e7ccc5584509a9884b32072173b0")]
 [assembly: System.Reflection.AssemblyProductAttribute("NTier")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NTier")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
