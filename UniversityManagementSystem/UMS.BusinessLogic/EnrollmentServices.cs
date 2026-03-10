@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UMS.BusinessLogic
 {
-    internal class EnrollmentServices
+    public class EnrollmentServices
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UMS.DataAccess
 {
-    internal class EnrollmentRepository
+    public class EnrollmentRepository
     {
     }
 }
