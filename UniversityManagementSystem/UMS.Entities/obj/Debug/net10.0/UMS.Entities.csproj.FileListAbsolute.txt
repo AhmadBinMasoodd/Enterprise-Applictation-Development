@@ -1,0 +1,12 @@
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\bin\Debug\net10.0\UMS.Entities.deps.json
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\bin\Debug\net10.0\UMS.Entities.dll
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\bin\Debug\net10.0\UMS.Entities.pdb
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.Entities.GeneratedMSBuildEditorConfig.editorconfig
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.Entities.AssemblyInfoInputs.cache
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.Entities.AssemblyInfo.cs
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.Entities.csproj.CoreCompileInputs.cache
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.Entities.sourcelink.json
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.Entities.dll
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\refint\UMS.Entities.dll
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.Entities.pdb
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\ref\UMS.Entities.dll

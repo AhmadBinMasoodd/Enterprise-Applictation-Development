@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="UMS.BusinessLogic/UMS.BusinessLogic.csproj" />
+  <Project Path="UMS.ConsoleApp/UMS.ConsoleApp.csproj" />
+  <Project Path="UMS.DataAccess/UMS.DataAccess.csproj" />
+  <Project Path="UMS.Entities/UMS.Entities.csproj" />
+  <Project Path="UniversityManagementSystem/UniversityManagementSystem.csproj" />
+</Solution>
