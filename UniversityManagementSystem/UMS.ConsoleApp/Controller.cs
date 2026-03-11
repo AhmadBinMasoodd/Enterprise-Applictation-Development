@@ -23,6 +23,8 @@ namespace UMS.ConsoleApp
 
                 if (choice == "a")
                 {
+                    TeacherServices teacherService = new TeacherServices();
+
                     Console.WriteLine("\nTeacher Management");
                     Console.WriteLine("1. Add Teacher");
                     Console.WriteLine("2. View Teachers");
@@ -33,21 +35,73 @@ namespace UMS.ConsoleApp
 
                     if (subChoice == "1")
                     {
+                        Teacher teacher = new Teacher();
 
+                        Console.Write("Enter Teacher Name: ");
+                        teacher.Name = Console.ReadLine()!;
+
+                        Console.Write("Enter Email: ");
+                        teacher.Email = Console.ReadLine()!;
+
+                        Console.Write("Enter Department Id: ");
+                        teacher.FkDepartmentId = int.Parse(Console.ReadLine()!);
+
+                        teacherService.AddTeacher(teacher);
                     }
-                        
 
                     else if (subChoice == "2")
-                        Console.WriteLine("Displaying Teachers");
+                    {
+                        var teachers = teacherService.GetAllTeachers();
+
+                        foreach (var t in teachers)
+                        {
+                            Console.WriteLine($"ID: {t.PkTeacherId}  Name: {t.Name}  Email: {t.Email}  DeptId: {t.FkDepartment}");
+                        }
+                    }
+
                     else if (subChoice == "3")
-                        Console.WriteLine("Teacher Updated Successfully");
+                    {
+                        Console.Write("Enter Teacher Id to Update: ");
+                        int id = int.Parse(Console.ReadLine()!);
+
+                        Teacher? teacher = teacherService.GetTeacherById(id);
+
+                        if (teacher != null)
+                        {
+                            Console.Write("Enter New Name: ");
+                            teacher.Name = Console.ReadLine()!;
+
+                            Console.Write("Enter New Email: ");
+                            teacher.Email = Console.ReadLine()!;
+
+                            Console.Write("Enter New Department Id: ");
+                            teacher.FkDepartmentId = int.Parse(Console.ReadLine()!);
+
+                            teacherService.UpdateTeacher(teacher);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Teacher not found.");
+                        }
+                    }
+
                     else if (subChoice == "4")
-                        Console.WriteLine("Teacher Deleted Successfully");
+                    {
+                        Console.Write("Enter Teacher Id to Delete: ");
+                        int id = int.Parse(Console.ReadLine()!);
+
+                        teacherService.DeleteTeacherById(id);
+                    }
+
                     else
+                    {
                         Console.WriteLine("Invalid Teacher Option");
+                    }
                 }
                 else if (choice == "b")
                 {
+                    StudentServices studentService = new StudentServices();
+
                     Console.WriteLine("\nStudent Management");
                     Console.WriteLine("1. Add Student");
                     Console.WriteLine("2. View Students");
@@ -57,15 +111,80 @@ namespace UMS.ConsoleApp
                     string? subChoice = Console.ReadLine();
 
                     if (subChoice == "1")
-                        Console.WriteLine("Student Added Successfully");
+                    {
+                        Student student = new Student();
+
+                        Console.Write("Enter Student Name: ");
+                        student.StudentName = Console.ReadLine()!;
+
+                        Console.Write("Enter Age: ");
+                        student.Age = int.Parse(Console.ReadLine()!);
+
+                        Console.Write("Enter Email: ");
+                        student.Email = Console.ReadLine()!;
+
+                        Console.Write("Enter Department Id: ");
+                        student.DepartmentId = int.Parse(Console.ReadLine()!);
+
+                        studentService.CheckStudentAge(student);
+                        studentService.AddStudent(student);
+                    }
+
                     else if (subChoice == "2")
-                        Console.WriteLine("Displaying Students");
+                    {
+                        var students = studentService.GetAllStudents();
+
+                        foreach (var s in students)
+                        {
+                            Console.WriteLine($"ID: {s.PkStudentId}  Name: {s.StudentName}  Age: {s.Age}  Email: {s.Email}  DeptId: {s.DepartmentId}");
+                        }
+                    }
+
                     else if (subChoice == "3")
-                        Console.WriteLine("Student Updated Successfully");
+                    {
+                        Console.Write("Enter Student Id to Update: ");
+                        int id = int.Parse(Console.ReadLine()!);
+
+                        Student? student = studentService.GetStudentById(id);
+
+                        if (student != null)
+                        {
+                            Console.Write("Enter New Name: ");
+                            student.StudentName = Console.ReadLine()!;
+
+                            Console.Write("Enter New Age: ");
+                            student.Age = int.Parse(Console.ReadLine()!);
+
+                            Console.Write("Enter New Email: ");
+                            student.Email = Console.ReadLine()!;
+
+                            Console.Write("Enter New Department Id: ");
+                            student.DepartmentId = int.Parse(Console.ReadLine()!);
+
+                            studentService.CheckStudentAge(student);
+                            studentService.UpdateStudent(student);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Student not found.");
+                        }
+                    }
+
                     else if (subChoice == "4")
-                        Console.WriteLine("Student Deleted Successfully");
+                    {
+                        Console.Write("Enter Student Id to Delete: ");
+                        int id = int.Parse(Console.ReadLine()!);
+
+                        Student student = new Student();
+                        student.PkStudentId = id;
+
+                        studentService.DeleteStudent(student);
+                    }
+
                     else
-                        Console.WriteLine("Invalid Student Option");
+                    {
+                        Console.WriteLine("Invalid Option");
+                    }
                 }
                 else if (choice == "c")
                 {
@@ -84,10 +203,10 @@ namespace UMS.ConsoleApp
                         Department department = new Department();
 
                         Console.Write("Enter Department Name: ");
-                        department.DepartmentName = Console.ReadLine();
+                        department.DepartmentName = Console.ReadLine()!;
 
                         Console.Write("Enter Location: ");
-                        department.Location = Console.ReadLine();
+                        department.Location = Console.ReadLine()!;
 
                         // CreatedDate will be set in Service layer automatically
                         departmentService.AddDepartment(department);
@@ -106,17 +225,17 @@ namespace UMS.ConsoleApp
                     else if (subChoice == "3")
                     {
                         Console.Write("Enter Department Id to Update: ");
-                        int id = int.Parse(Console.ReadLine());
+                        int id = int.Parse(Console.ReadLine()!);
 
                         Department? department = departmentService.GetDepartmentById(id);
 
                         if (department != null)
                         {
                             Console.Write("Enter New Department Name: ");
-                            department.DepartmentName = Console.ReadLine();
+                            department.DepartmentName = Console.ReadLine()!;
 
                             Console.Write("Enter New Location: ");
-                            department.Location = Console.ReadLine();
+                            department.Location = Console.ReadLine()!;
 
                             // Do NOT modify CreatedDate
                             departmentService.UpdateDepartment(department);
@@ -130,7 +249,7 @@ namespace UMS.ConsoleApp
                     else if (subChoice == "4")
                     {
                         Console.Write("Enter Department Id to Delete: ");
-                        int id = int.Parse(Console.ReadLine());
+                        int id = int.Parse(Console.ReadLine()!);
 
                         departmentService.DeleteDepartment(id);
                     }
@@ -157,13 +276,13 @@ namespace UMS.ConsoleApp
                         Course? course = new Course();
 
                         Console.Write("Enter Course Name: ");
-                        course.CourseName = Console.ReadLine();
+                        course.CourseName = Console.ReadLine()!;
 
                         Console.Write("Enter Credit Hours: ");
-                        course.Credits = int.Parse(Console.ReadLine());
+                        course.Credits = int.Parse(Console.ReadLine()!);
 
                         Console.Write("Enter Department Id: ");
-                        course.FkDepartmenId = int.Parse(Console.ReadLine());
+                        course.FkDepartmenId = int.Parse(Console.ReadLine()!);
 
                         courseService.AddCourse(course);
                     }
@@ -181,20 +300,20 @@ namespace UMS.ConsoleApp
                     else if (subChoice == "3")
                     {
                         Console.Write("Enter Course Id to Update: ");
-                        int id = int.Parse(Console.ReadLine());
+                        int id = int.Parse(Console.ReadLine()!);
 
                         Course? course = courseService.GetCourseById(id);
 
                         if (course != null)
                         {
                             Console.Write("Enter New Course Name: ");
-                            course.CourseName = Console.ReadLine();
+                            course.CourseName = Console.ReadLine()!;
 
                             Console.Write("Enter New Credit Hours: ");
-                            course.Credits = int.Parse(Console.ReadLine());
+                            course.Credits = int.Parse(Console.ReadLine()!);
 
                             Console.Write("Enter New Department Id: ");
-                            course.FkDepartmenId = int.Parse(Console.ReadLine());
+                            course.FkDepartmenId = int.Parse(Console.ReadLine()!);
 
                             courseService.UpdateCourse(course);
                         }
@@ -207,7 +326,7 @@ namespace UMS.ConsoleApp
                     else if (subChoice == "4")
                     {
                         Console.Write("Enter Course Id to Delete: ");
-                        int id = int.Parse(Console.ReadLine());
+                        int id = int.Parse(Console.ReadLine()!);
 
                         courseService.DeleteCourse(id);
                     }
