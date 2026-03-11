@@ -10,3 +10,4 @@ E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.En
 E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\refint\UMS.Entities.dll
 E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.Entities.pdb
 E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\ref\UMS.Entities.dll
+E:\EAD\Programs\UniversityManagementSystem\UMS.Entities\obj\Debug\net10.0\UMS.Entities.csproj.AssemblyReference.cache

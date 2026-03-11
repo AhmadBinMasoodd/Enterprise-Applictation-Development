@@ -26,9 +26,10 @@ public partial class UniversityDbContext : DbContext
 
     public virtual DbSet<Student> Students { get; set; }
 
-    public virtual DbSet<Table> Tables { get; set; }
+    public virtual DbSet<Teacher> Teachers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=(localdb)\\ProjectModels;Database=UniversityManagementDB;Trusted_Connection=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -48,7 +49,13 @@ public partial class UniversityDbContext : DbContext
         {
             entity.HasKey(e => e.PkAssignmentId).HasName("PK__CourseAs__D533D5D6FECD1E04");
 
-            entity.HasOne(d => d.FkCourse).WithMany(p => p.CourseAssignments).HasConstraintName("FK_CourseAssignment_Course");
+            entity.HasOne(d => d.FkCourse).WithMany(p => p.CourseAssignments)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_CourseAssignment_Course");
+
+            entity.HasOne(d => d.FkTeacher).WithMany(p => p.CourseAssignments)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_CourseAssignment_Teacher");
         });
 
         modelBuilder.Entity<Department>(entity =>
@@ -87,16 +94,16 @@ public partial class UniversityDbContext : DbContext
                 .HasConstraintName("FK_Student_Department");
         });
 
-        modelBuilder.Entity<Table>(entity =>
+        modelBuilder.Entity<Teacher>(entity =>
         {
-            entity.HasKey(e => e.PkStudentId).HasName("PK__Table__DA018ED360DE0CB4");
+            entity.HasKey(e => e.PkTeacherId).HasName("PK__Teacher__659BA95448DBC9BE");
 
             entity.Property(e => e.Email).IsFixedLength();
-            entity.Property(e => e.StudentName).IsFixedLength();
+            entity.Property(e => e.Name).IsFixedLength();
 
-            entity.HasOne(d => d.Department).WithMany(p => p.Tables)
+            entity.HasOne(d => d.FkDepartment).WithMany(p => p.Teachers)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Table_ToTable");
+                .HasConstraintName("FK_Teacher_Department");
         });
 
         OnModelCreatingPartial(modelBuilder);

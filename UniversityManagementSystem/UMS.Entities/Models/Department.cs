@@ -28,6 +28,6 @@ public partial class Department
     [InverseProperty("Department")]
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
 
-    [InverseProperty("Department")]
-    public virtual ICollection<Table> Tables { get; set; } = new List<Table>();
+    [InverseProperty("FkDepartment")]
+    public virtual ICollection<Teacher> Teachers { get; set; } = new List<Teacher>();
 }

@@ -13,7 +13,7 @@ public partial class Course
     [Column("pk_CourseId")]
     public int PkCourseId { get; set; }
 
-    [StringLength(25)]
+    [StringLength(30)]
     public string CourseName { get; set; } = null!;
 
     public int Credits { get; set; }

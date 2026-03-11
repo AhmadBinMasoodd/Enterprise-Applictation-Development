@@ -10,8 +10,8 @@ namespace UniversityManagementSystem
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the University Management System!");
-          Controller controller = new Controller();
-                       
+            Controller controller = new Controller();
+            controller.AdminFunctionality();
         }
 
     }

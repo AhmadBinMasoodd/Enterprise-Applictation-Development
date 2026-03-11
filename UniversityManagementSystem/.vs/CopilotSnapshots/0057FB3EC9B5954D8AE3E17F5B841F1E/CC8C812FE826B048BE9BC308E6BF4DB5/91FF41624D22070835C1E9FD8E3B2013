@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
+
+namespace UMS.DataAccess;
+
+[Table("CourseAssignment")]
+public partial class CourseAssignment
+{
+    [Key]
+    [Column("pk_AssignmentId")]
+    public int PkAssignmentId { get; set; }
+
+    [Column("fk_CourseId")]
+    public int? FkCourseId { get; set; }
+
+    [ForeignKey("FkCourseId")]
+    [InverseProperty("CourseAssignments")]
+    public virtual Course? FkCourse { get; set; }
+}

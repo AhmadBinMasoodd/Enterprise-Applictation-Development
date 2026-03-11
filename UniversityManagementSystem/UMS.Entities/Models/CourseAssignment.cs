@@ -14,9 +14,16 @@ public partial class CourseAssignment
     public int PkAssignmentId { get; set; }
 
     [Column("fk_CourseId")]
-    public int? FkCourseId { get; set; }
+    public int FkCourseId { get; set; }
+
+    [Column("fk_TeacherId")]
+    public int FkTeacherId { get; set; }
 
     [ForeignKey("FkCourseId")]
     [InverseProperty("CourseAssignments")]
-    public virtual Course? FkCourse { get; set; }
+    public virtual Course FkCourse { get; set; } = null!;
+
+    [ForeignKey("FkTeacherId")]
+    [InverseProperty("CourseAssignments")]
+    public virtual Teacher FkTeacher { get; set; } = null!;
 }

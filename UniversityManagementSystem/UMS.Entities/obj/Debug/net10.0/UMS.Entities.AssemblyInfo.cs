@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UMS.Entities")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f03eae8150c0f7474d1cc9c7c63363251c17508")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50016224a51bf3fa2655b7cb269df3fba073adf2")]
 [assembly: System.Reflection.AssemblyProductAttribute("UMS.Entities")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UMS.Entities")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
