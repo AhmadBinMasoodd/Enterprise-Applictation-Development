@@ -46,7 +46,24 @@ namespace UMS.DataAccess
             }
         }
 
+        public List<Teacher> GetTeachersByDepartmentId(int departmentId)
+        {
+            try
+            {
+                using (var context = new UniversityDbContext()) 
+                {
+                    List<Teacher> teachers = context.Teachers.Where(t => t.FkDepartmentId == departmentId).ToList();
+                    
+                    return teachers;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to Retrieve Teacher " + ex.Message);
 
+                return new List<Teacher>();
+            }
+        }
         public Teacher? GetTeacherById(int id) 
         {
             try

@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "E:\\EAD\\Programs\\UniversityManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A1E437B-0C0F-5606-1692-2B90A1E5CC93}|UMS.ConsoleApp\\UMS.ConsoleApp.csproj|e:\\ead\\programs\\universitymanagementsystem\\ums.consoleapp\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1E437B-0C0F-5606-1692-2B90A1E5CC93}|UMS.ConsoleApp\\UMS.ConsoleApp.csproj|solutionrelative:ums.consoleapp\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A0FE-A892-A2FB-26E9-2CD686F59FA2}|UMS.BusinessLogic\\UMS.BusinessLogic.csproj|e:\\ead\\programs\\universitymanagementsystem\\ums.businesslogic\\teacherservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A0FE-A892-A2FB-26E9-2CD686F59FA2}|UMS.BusinessLogic\\UMS.BusinessLogic.csproj|solutionrelative:ums.businesslogic\\teacherservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A665EC65-6FC4-52BE-5041-7D8306B635F4}|UMS.DataAccess\\UMS.DataAccess.csproj|e:\\ead\\programs\\universitymanagementsystem\\ums.dataaccess\\teacherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A665EC65-6FC4-52BE-5041-7D8306B635F4}|UMS.DataAccess\\UMS.DataAccess.csproj|solutionrelative:ums.dataaccess\\teacherrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A665EC65-6FC4-52BE-5041-7D8306B635F4}|UMS.DataAccess\\UMS.DataAccess.csproj|e:\\ead\\programs\\universitymanagementsystem\\ums.dataaccess\\departmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A665EC65-6FC4-52BE-5041-7D8306B635F4}|UMS.DataAccess\\UMS.DataAccess.csproj|solutionrelative:ums.dataaccess\\departmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FE9A0FE-A892-A2FB-26E9-2CD686F59FA2}|UMS.BusinessLogic\\UMS.BusinessLogic.csproj|e:\\ead\\programs\\universitymanagementsystem\\ums.businesslogic\\departmentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FE9A0FE-A892-A2FB-26E9-2CD686F59FA2}|UMS.BusinessLogic\\UMS.BusinessLogic.csproj|solutionrelative:ums.businesslogic\\departmentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D46E275-10D8-D3EB-6313-73CE44CBF2DA}|UMS.Entities\\UMS.Entities.csproj|e:\\ead\\programs\\universitymanagementsystem\\ums.entities\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D46E275-10D8-D3EB-6313-73CE44CBF2DA}|UMS.Entities\\UMS.Entities.csproj|solutionrelative:ums.entities\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{03496A78-7300-DD60-B071-5C5898DFB620}|UniversityManagementSystem\\UniversityManagementSystem.csproj|e:\\ead\\programs\\universitymanagementsystem\\universitymanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03496A78-7300-DD60-B071-5C5898DFB620}|UniversityManagementSystem\\UniversityManagementSystem.csproj|solutionrelative:universitymanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,24 +42,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DepartmentServices.cs",
+              "DocumentMoniker": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.BusinessLogic\\DepartmentServices.cs",
+              "RelativeDocumentMoniker": "UMS.BusinessLogic\\DepartmentServices.cs",
+              "ToolTip": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.BusinessLogic\\DepartmentServices.cs",
+              "RelativeToolTip": "UMS.BusinessLogic\\DepartmentServices.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T17:42:19.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DepartmentRepository.cs",
+              "DocumentMoniker": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.DataAccess\\DepartmentRepository.cs",
+              "RelativeDocumentMoniker": "UMS.DataAccess\\DepartmentRepository.cs",
+              "ToolTip": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.DataAccess\\DepartmentRepository.cs",
+              "RelativeToolTip": "UMS.DataAccess\\DepartmentRepository.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAswD0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:46:30.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Department.cs",
+              "DocumentMoniker": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.Entities\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "UMS.Entities\\Models\\Department.cs",
+              "ToolTip": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.Entities\\Models\\Department.cs",
+              "RelativeToolTip": "UMS.Entities\\Models\\Department.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA0wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:44:35.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TeacherRepository.cs",
+              "DocumentMoniker": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.DataAccess\\TeacherRepository.cs",
+              "RelativeDocumentMoniker": "UMS.DataAccess\\TeacherRepository.cs",
+              "ToolTip": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.DataAccess\\TeacherRepository.cs",
+              "RelativeToolTip": "UMS.DataAccess\\TeacherRepository.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAiwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:33:38.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Controller.cs",
+              "DocumentMoniker": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.ConsoleApp\\Controller.cs",
+              "RelativeDocumentMoniker": "UMS.ConsoleApp\\Controller.cs",
+              "ToolTip": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.ConsoleApp\\Controller.cs",
+              "RelativeToolTip": "UMS.ConsoleApp\\Controller.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAYwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:30:01.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TeacherServices.cs",
+              "DocumentMoniker": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.BusinessLogic\\TeacherServices.cs",
+              "RelativeDocumentMoniker": "UMS.BusinessLogic\\TeacherServices.cs",
+              "ToolTip": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.BusinessLogic\\TeacherServices.cs",
+              "RelativeToolTip": "UMS.BusinessLogic\\TeacherServices.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAcwBEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:29:51.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\EAD\\Programs\\UniversityManagementSystem\\UniversityManagementSystem\\Program.cs",
               "RelativeDocumentMoniker": "UniversityManagementSystem\\Program.cs",
               "ToolTip": "E:\\EAD\\Programs\\UniversityManagementSystem\\UniversityManagementSystem\\Program.cs",
               "RelativeToolTip": "UniversityManagementSystem\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-10T07:48:55.257Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "StudentServices.cs",
               "DocumentMoniker": "E:\\EAD\\Programs\\UniversityManagementSystem\\UMS.BusinessLogic\\StudentServices.cs",
               "RelativeDocumentMoniker": "UMS.BusinessLogic\\StudentServices.cs",

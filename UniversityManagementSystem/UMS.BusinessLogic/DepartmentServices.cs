@@ -14,8 +14,13 @@ namespace UMS.BusinessLogic
             _departmentRepository = new DepartmentRepository();
         }
 
+        public List<Teacher> GetTeachersOfDepartment(int departmentId)
+        {
+            return _departmentRepository.GetTeachersOfDepartment(departmentId);
+        }
 
-        
+
+
         public void AddDepartment(Department department)
         {
             department.CreatedDate = DateTime.Now;

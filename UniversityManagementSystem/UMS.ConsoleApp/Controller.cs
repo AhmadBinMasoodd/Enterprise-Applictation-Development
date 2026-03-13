@@ -27,9 +27,10 @@ namespace UMS.ConsoleApp
 
                     Console.WriteLine("\nTeacher Management");
                     Console.WriteLine("1. Add Teacher");
-                    Console.WriteLine("2. View Teachers");
+                    Console.WriteLine("2. View ALL Teachers");
                     Console.WriteLine("3. Update Teacher");
                     Console.WriteLine("4. Delete Teacher");
+                    Console.WriteLine("5. View Teachers By Department");
 
                     string? subChoice = Console.ReadLine();
 
@@ -55,7 +56,7 @@ namespace UMS.ConsoleApp
 
                         foreach (var t in teachers)
                         {
-                            Console.WriteLine($"ID: {t.PkTeacherId}  Name: {t.Name}  Email: {t.Email}  DeptId: {t.FkDepartment}");
+                            Console.WriteLine($"ID: {t.PkTeacherId}  Name: {t.Name}  Email: {t.Email}  DeptId: {t.FkDepartmentId}");
                         }
                     }
 
@@ -92,7 +93,21 @@ namespace UMS.ConsoleApp
 
                         teacherService.DeleteTeacherById(id);
                     }
+                    else if (subChoice == "5")
+                    {
+                        Console.Write("Enter Department Id to View Teachers: ");
+                        int id= int.Parse(Console.ReadLine()!);
 
+                        var teachers=teacherService.GetTeachersByDepartmentId(id);
+                        if(teachers != null)
+                        {
+                            foreach(var teacher in teachers)
+                            {
+                                Console.WriteLine($"ID: {teacher.PkTeacherId}  Name: {teacher.Name}  Email: {teacher.Email}  DeptId: {teacher.FkDepartmentId}");
+
+                            }
+                        }
+                    }
                     else
                     {
                         Console.WriteLine("Invalid Teacher Option");
@@ -195,7 +210,7 @@ namespace UMS.ConsoleApp
                     Console.WriteLine("2. View Departments");
                     Console.WriteLine("3. Update Department");
                     Console.WriteLine("4. Delete Department");
-
+                    Console.WriteLine("5. View Teacher By Department Id");
                     string? subChoice = Console.ReadLine();
 
                     if (subChoice == "1")
@@ -252,6 +267,18 @@ namespace UMS.ConsoleApp
                         int id = int.Parse(Console.ReadLine()!);
 
                         departmentService.DeleteDepartment(id);
+                    }
+                    else if (subChoice == "5")
+                    {
+                        Console.WriteLine("Enter the department id: ");
+                        int id=int.Parse(Console.ReadLine()!);
+                        var teachers=departmentService.GetTeachersOfDepartment(id);
+
+                        foreach(var teacher in teachers)
+                        {
+                            Console.WriteLine($"ID: {teacher.PkTeacherId}  Name: {teacher.Name}  Email: {teacher.Email}  DeptId: {teacher.FkDepartmentId}");
+
+                        }
                     }
 
                     else

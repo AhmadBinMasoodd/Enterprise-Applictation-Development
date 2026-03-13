@@ -13,7 +13,8 @@ namespace UMS.BusinessLogic
         {
             _repository = new TeacherRepository();
         }
-
+        public List<Teacher> GetTeachersByDepartmentId(int departmentId) =>_repository.GetTeachersByDepartmentId(departmentId);
+        
         public void AddTeacher(Teacher teacher)
         {
             _repository.AddTeacher(teacher);

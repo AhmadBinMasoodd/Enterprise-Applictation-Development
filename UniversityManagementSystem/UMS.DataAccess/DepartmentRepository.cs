@@ -4,6 +4,7 @@ using System.Text;
 using UMS.DataAccess.Context;
 using System.Linq;
 using UMS.Entities;
+using Microsoft.EntityFrameworkCore;
 namespace UMS.DataAccess
 {
     public class DepartmentRepository
@@ -57,6 +58,33 @@ namespace UMS.DataAccess
             {
                 Console.WriteLine("Error while retrieving department: " + ex.Message);
                 return null;
+            }
+        }
+        public List<Teacher> GetTeachersOfDepartment(int departmentId)
+        {
+            try
+            {
+                using (var context = new UniversityDbContext())
+                {
+                    var department = context.Departments.Include(t=>t.Teachers).FirstOrDefault(t=>t.PkDepartmentId==departmentId);
+                    if (department == null)
+                    {
+                        Console.WriteLine($"Department with {departmentId} not found");
+                        return new List<Teacher>();
+                    }
+                    if (department.Teachers == null)
+                    {
+                        Console.WriteLine($"Department with id {departmentId} and name {department.DepartmentName} has no teacher");
+                        return new List<Teacher>();
+                    }
+
+                    return department!.Teachers.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while retrieving teachers: " + ex.Message);
+                return new List<Teacher>();
             }
         }
         public void RemoveDepartment(int departmentId)
