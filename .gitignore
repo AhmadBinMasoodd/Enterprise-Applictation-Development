@@ -1,0 +1,56 @@
+# Visual Studio files
+.vs/
+.vsconfig
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+Debug/
+Release/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.ncb
+
+# NuGet
+packages/
+*.nupkg
+
+# Temp files
+*.temp
+*_i.c
+*_p.c
+
+# Project specific
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+**/*.dll
+**/*.exe
+**/*.pdb
+**/*.cache
