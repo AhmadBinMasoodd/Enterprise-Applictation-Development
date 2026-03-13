@@ -30,6 +30,7 @@ namespace UMS.BusinessLogic
 
         public void AddStudent(Student student)
         {
+            student.EnrollmentDate = DateTime.Now;
             _studentRepository.AddStudent(student);
         }
         public List<Student> GetAllStudents()
