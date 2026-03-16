@@ -44,7 +44,37 @@ namespace UMS.DataAccess
                 return new List<Department>();
             }
         }
-
+        public void DepartmentDashboard(int departmentId)
+        {
+            try
+            {
+                using (var context = new UniversityDbContext())
+                {
+                    var department = context.Departments
+                        .Include(d => d.Students)
+                        .Include(d => d.Courses)
+                        .Include(d => d.Teachers)
+                        .FirstOrDefault(d => d.PkDepartmentId == departmentId);
+                    if (department != null)
+                    {
+                        Console.WriteLine($"Department: {department.DepartmentName}");
+                        Console.WriteLine($"Location: {department.Location}");
+                        Console.WriteLine($"Created Date: {department.CreatedDate}");
+                        Console.WriteLine($"Number of Students: {department.Students?.Count ?? 0}");
+                        Console.WriteLine($"Number of Courses: {department.Courses?.Count ?? 0}");
+                        Console.WriteLine($"Number of Teachers: {department.Teachers?.Count ?? 0}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Department not found.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while retrieving department dashboard: " + ex.Message);
+            }
+        }
         public Department? GetById(int id)
         {
             try
@@ -58,6 +88,43 @@ namespace UMS.DataAccess
             {
                 Console.WriteLine("Error while retrieving department: " + ex.Message);
                 return null;
+            }
+        }
+
+
+        public List<Student> GetStudentsByDepartmentId(int departmentId)
+        {
+            try
+            {
+                using (var context = new UniversityDbContext())
+                {
+                    var department = context.Departments.Include(s => s.Students).FirstOrDefault(d => d.PkDepartmentId == departmentId);
+
+                    return department?.Students.ToList() ?? new List<Student>();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while retrieving students: " + ex.Message);
+                return new List<Student>();
+            }
+        }
+
+        public List<Course> GetCoursesByDepartmentId(int departmentId)
+        {
+            try
+            {
+                using (var context = new UniversityDbContext())
+                {
+                    var department = context.Departments.Include(c => c.Courses).FirstOrDefault(d => d.PkDepartmentId == departmentId);
+
+                    return department?.Courses.ToList() ?? new List<Course>();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while retrieving Courses: " + ex.Message);
+                return new List<Course>();
             }
         }
         public List<Teacher> GetTeachersOfDepartment(int departmentId)

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="dsl/dsl.csproj" />
+  <Project Path="entityFramework/entityFramework.csproj" />
+</Solution>

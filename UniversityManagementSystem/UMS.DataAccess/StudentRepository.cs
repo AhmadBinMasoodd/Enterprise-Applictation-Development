@@ -40,7 +40,21 @@ namespace UMS.DataAccess
             }
         }
 
-
+        public List<Student> GetStudentsByDepartmentId(int departmentId)
+        {
+            try
+            {
+                using (var context = new UniversityDbContext())
+                {
+                    return context.Students.Where(s => s.DepartmentId == departmentId).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while retrieving students: " + ex.Message);
+                return new List<Student>();
+            }
+        }
         public Student? GetStudent(int id) { 
             try
             {

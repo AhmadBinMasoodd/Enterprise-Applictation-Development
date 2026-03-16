@@ -37,7 +37,10 @@ namespace UMS.BusinessLogic
         {
             return _studentRepository.GetAll();
         }
-
+        public List<Student> GetStudentsByDepartmentId(int departmentId)
+        {
+            return _studentRepository.GetStudentsByDepartmentId(departmentId);
+        }
         public void UpdateStudent(Student student)
         { 
             _studentRepository.UpdateStudent(student);

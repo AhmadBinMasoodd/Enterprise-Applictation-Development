@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="business_layer/business_layer.csproj" />
+  <Project Path="data_service_layer/data_service_layer.csproj" />
+  <Project Path="Entity/Entity.csproj" Id="a5104fc8-0ffb-417b-a364-3d9d656c7412" />
+  <Project Path="NTier/NTier.csproj" />
+  <Project Path="presentation_layer/presentation_layer.csproj" />
+</Solution>
