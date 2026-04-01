@@ -19,18 +19,17 @@ namespace WPFApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Student> students;
+        private ObservableCollection<Student> studentsList;
         private Student? selectedStudent;
+        private EnterpriseManagementDbContext dbContext;
         public MainWindow()
         {
             InitializeComponent();
-            students = new ObservableCollection<Student>
-            {
-                new Student { Sname = "Alice", Sage = 20 },
-                new Student { Sname = "Bob", Sage = 22 },
-                new Student { Sname = "Charlie", Sage = 21 }
-            };
-            stdGrid.ItemsSource = students;
+
+            dbContext = new EnterpriseManagementDbContext();
+            studentsList = new ObservableCollection<Student>(dbContext.Students.ToList());
+            
+            stdGrid.ItemsSource = studentsList;
         }
 
         private void Clear_Student()
@@ -45,7 +44,12 @@ namespace WPFApp1
                 string name = TbName.Text;
                 if(int.TryParse(TbAge.Text, out int age))
                 {
-                    students.Add(new Student { Sname = name, Sage = age });
+                    dbContext.Students.Add(new Student { Sname = name, Sage = age });
+                    int num=dbContext.SaveChanges();
+                    if(num > 0)
+                    {
+                        studentsList.Add(new Student { Sname = name, Sage = age });
+                    }
                     Clear_Student();
                 }
                 else
@@ -60,7 +64,12 @@ namespace WPFApp1
             Student? student=stdGrid.SelectedItem as Student;
             if(student != null)
             {
-                students.Remove(student);
+                dbContext.Students.Remove(student);
+                int num=dbContext.SaveChanges();
+                if (num > 0)
+                {
+                    studentsList.Remove(student);
+                }
             }
             else
             {
@@ -90,6 +99,10 @@ namespace WPFApp1
             { 
                 selectedStudent.Sname = TbName.Text;
                 selectedStudent.Sage = int.TryParse(TbAge.Text, out int age) ? age : selectedStudent.Sage;
+
+                dbContext.Students.Update(selectedStudent);
+                dbContext.SaveChanges();
+
                 //stdGrid.Items.Refresh();
                 Clear_Student();
             }

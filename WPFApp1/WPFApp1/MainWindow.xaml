@@ -35,7 +35,7 @@
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" >
                 <TextBlock Text="Enter Student Age" FontSize="22"  HorizontalAlignment="Stretch" Margin="10"/>
-                <TextBox Name="TbAge" Text="e" Margin="10" FontSize="20"/>
+                <TextBox Name="TbAge" Text="" Margin="10" FontSize="20"/>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal">
                 <Button Name="BtnAdd" Content="Add Student" Height="40"  Width="100" Margin="10" VerticalAlignment="Center" Click="add_Student" />
