@@ -7,11 +7,7 @@
         mc:Ignorable="d"
         Title="Student Portal" Height="450" Width="800">
     <Grid ShowGridLines="true">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition>
-                
-            </ColumnDefinition>
-        </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="*">
                                
@@ -48,7 +44,6 @@
         <DataGrid Grid.Row="1" Grid.Column="0" Name="stdGrid" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="2*" Header="Name" Binding="{Binding Sname}" >
-                    
                 </DataGridTextColumn>
                 <DataGridTextColumn Width="2*" Header="Age" Binding="{Binding Sage}"></DataGridTextColumn>
                 <DataGridTemplateColumn Width="Auto" Header="Edit">
