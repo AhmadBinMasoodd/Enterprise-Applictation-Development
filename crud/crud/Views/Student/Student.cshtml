@@ -1,0 +1,43 @@
+﻿@model List<crud.Models.Student>
+
+<html>
+<body>
+    <form method="post" action="/Student/addstudent">
+        <div>
+            <label>Enter Name</label><br />
+            <input name="name" type="text" />
+        </div>
+        <div>
+            <label>Enter Age</label><br />
+            <input name="age" type="text" />
+        </div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+    <span>
+        @ViewData["msg"]
+    </span>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Sname</td>
+                <td>@student.Sage</td>
+                <td>
+                    <a href="/Student/deletestudent?pk_id=@student.Id">Delete</a>
+                </td>
+                <td>
+                    <a href="/Student/editstudent?pk_id=@student.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
