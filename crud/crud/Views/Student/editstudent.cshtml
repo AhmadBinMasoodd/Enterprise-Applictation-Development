@@ -1,14 +1,17 @@
-﻿<form method="post" action="/Student/update">
-    <input type="hidden" name="pk_id" value="@Model.Id" />
-    <div>
-        <label>Enter Name</label><br />
-        <input name="name" type="text" value="@Model.Sname" />
-    </div>
-    <div>
-        <label>Enter Age</label><br />
-        <input name="age" type="text" value="@Model.Sage" />
-    </div>
-    <div>
-        <input type="submit" value="Edit Student" />
-    </div>
-</form>
+﻿
+<body>
+    <form method="post" action="/Student/update">
+        <input type="hidden" name="pk_id" value="@Model.Id" />
+        <div>
+            <label>Enter Name</label><br />
+            <input name="name" type="text" value="@Model.Sname" />
+        </div>
+        <div>
+            <label>Enter Age</label><br />
+            <input name="age" type="text" value="@Model.Sage" />
+        </div>
+        <div>
+            <input type="submit" value="Edit Student" />
+        </div>
+    </form>
+</body>

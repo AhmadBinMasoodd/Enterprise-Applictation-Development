@@ -17,7 +17,19 @@ namespace crud.Controllers
 
             }
         }
+        
+        public IActionResult add(string name,string age)
+        {
+            using (EnterpriseDbContext db = new EnterpriseDbContext())
+            {
+                Student student = new Student { Sname = name, Sage = int.Parse(age) };
+                db.Students.Add(student);
+                db.SaveChanges();
 
+            }
+            return Ok();
+        }
+        [HttpGet]
         public IActionResult getAllStudents()
         {
              using(EnterpriseDbContext db= new EnterpriseDbContext())
@@ -27,6 +39,24 @@ namespace crud.Controllers
             }
         }
 
+        [HttpDelete]
+        public IActionResult delete(int pk_id)
+        {
+            using (EnterpriseDbContext db = new EnterpriseDbContext())
+            {
+                Student? temp = db.Students.Where(x => x.Id == pk_id).FirstOrDefault();
+
+                ///nameless variables
+                /// the variable is not used anywhere else in the code
+                db.Students.Remove(temp!);
+                db.SaveChanges();
+                 
+               return Ok();
+                   
+                
+            }
+
+        }
         public IActionResult deletestudent(int pk_id)
         {
             using (EnterpriseDbContext db = new EnterpriseDbContext())
@@ -55,6 +85,7 @@ namespace crud.Controllers
             }
 
         }
+        [HttpPost]
         public IActionResult update(int pk_id,string name,int age)
         {
             using(EnterpriseDbContext db=new EnterpriseDbContext())
@@ -100,6 +131,37 @@ namespace crud.Controllers
                 }
             }
         }
+        public IActionResult updateStu(int pk_id, string name, int age)
+        {
+            using (EnterpriseDbContext db = new EnterpriseDbContext())
+            {
+                var temp = db.Students.FirstOrDefault(s => s.Id == pk_id);
+
+                if (temp == null) return NotFound();
+
+                temp.Sname = name;
+                temp.Sage = age;
+
+                db.SaveChanges();
+                return Ok();
+            }
+        }
+        public IActionResult getStudentById(int id)
+        {
+            using (EnterpriseDbContext db = new EnterpriseDbContext())
+            {
+                var student = db.Students.Where(s => s.Id == id).FirstOrDefault();
+                if (student != null)
+                {
+                    return Json(student);
+                }
+                else
+                {
+                    return Json(new { message = "Student not found" });
+                }
+            }
+        }
+
         [HttpPost]
         public IActionResult addstudent(string name,string age)
         {

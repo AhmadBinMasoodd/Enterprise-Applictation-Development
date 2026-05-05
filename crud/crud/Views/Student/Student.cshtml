@@ -1,23 +1,26 @@
-﻿@model List<crud.Models.Student>
-
+﻿<!DOCTYPE html>
 <html>
+<head>
+    <title>Student CRUD</title>
+</head>
 <body>
-    <form method="post" action="/Student/addstudent">
+
+    <form onsubmit="event.preventDefault(); handleSubmit();">
         <div>
-            <label>Enter Name</label><br />
-            <input name="name" type="text" />
+            <label>Name</label><br />
+            <input id="name" type="text" />
         </div>
         <div>
-            <label>Enter Age</label><br />
-            <input name="age" type="text" />
+            <label>Age</label><br />
+            <input id="age" type="text" />
         </div>
         <div>
-            <input type="submit" value="Submit" />
+            <input type="hidden" id="hiddenid" />
+            <input type="submit" id="submitBtn" value="Submit" />
+            <button type="button" onclick="updateStudent()">Update</button>
         </div>
     </form>
-    <span>
-        @ViewData["msg"]
-    </span>
+
     <table border="1">
         <tr>
             <th>Name</th>
@@ -25,19 +28,137 @@
             <th>Delete</th>
             <th>Edit</th>
         </tr>
-        @foreach (var student in Model)
-        {
-            <tr>
-                <td>@student.Sname</td>
-                <td>@student.Sage</td>
-                <td>
-                    <a href="/Student/deletestudent?pk_id=@student.Id">Delete</a>
-                </td>
-                <td>
-                    <a href="/Student/editstudent?pk_id=@student.Id">Edit</a>
-                </td>
-            </tr>
-        }
+        <tbody id="tblBody"></tbody>
     </table>
+
+    <script>
+
+            // HANDLE SUBMIT (ADD OR UPDATE)
+            function handleSubmit() {
+                const id = document.getElementById("hiddenid").value;
+
+                if (id) {
+                    updateStudent();
+                } else {
+                    addStudent();
+                }
+            }
+
+            // LOAD STUDENTS
+            async function loadStudent() {
+                const response = await fetch('/Student/getAllStudents');
+                const data = await response.json();
+
+                const tblBody = document.getElementById("tblBody");
+                tblBody.innerHTML = "";
+
+                data.forEach(student => {
+                    tblBody.insertAdjacentHTML("beforeend", `
+                        <tr id="row-${student.id}">
+                            <td>${student.sname}</td>
+                            <td>${student.sage}</td>
+                            <td><a href="#" onclick="deleteStudent(${student.id})">Delete</a></td>
+                            <td><a href="#" onclick="editStudent(${student.id})">Edit</a></td>
+                        </tr>
+                    `);
+                });
+            }
+
+            // ADD STUDENT
+            async function addStudent() {
+                const name = document.getElementById("name").value;
+                const age = document.getElementById("age").value;
+
+                const response = await fetch('/Student/add', {
+                    method: "POST",
+                    body: new URLSearchParams({
+                        name: name,
+                        age: age
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+
+                    const tblBody = document.getElementById("tblBody");
+
+                    tblBody.insertAdjacentHTML("beforeend", `
+                        <tr id="row-${data.id}">
+                            <td>${data.sname}</td>
+                            <td>${data.sage}</td>
+                            <td><a href="#" onclick="deleteStudent(${data.id})">Delete</a></td>
+                            <td><a href="#" onclick="editStudent(${data.id})">Edit</a></td>
+                        </tr>
+                    `);
+
+                    // clear fields
+                    clearForm();
+                }
+            }
+
+            // DELETE STUDENT
+            async function deleteStudent(id) {
+                const response = await fetch(`/Student/delete?pk_id=${id}`, {
+                    method: "DELETE"
+                });
+
+                if (response.ok) {
+                    const row = document.getElementById(`row-${id}`);
+                    if (row) row.remove();
+                }
+            }
+
+            // EDIT STUDENT
+            async function editStudent(id) {
+                const response = await fetch(`/Student/getStudentById?id=${id}`);
+
+                if (response.ok) {
+                    const data = await response.json();
+
+                    document.getElementById("name").value = data.sname;
+                    document.getElementById("age").value = data.sage;
+                    document.getElementById("hiddenid").value = data.id;
+                }
+            }
+
+            // UPDATE STUDENT (NO RELOAD)
+            async function updateStudent() {
+                const id = document.getElementById("hiddenid").value;
+                const name = document.getElementById("name").value;
+                const age = document.getElementById("age").value;
+
+                const response = await fetch('/Student/updateStu', {
+                    method: "POST",
+                    body: new URLSearchParams({
+                        pk_id: id,
+                        name: name,
+                        age: age
+                    })
+                });
+
+                if (response.ok) {
+                    const row = document.getElementById(`row-${id}`);
+
+                    if (row) {
+                        row.children[0].innerText = name;
+                        row.children[1].innerText = age;
+                    }
+
+                    clearForm();
+                }
+            }
+
+            // CLEAR FORM
+            function clearForm() {
+                document.getElementById("hiddenid").value = "";
+                document.getElementById("name").value = "";
+                document.getElementById("age").value = "";
+            }
+
+            // INITIAL LOAD
+            loadStudent();
+
+    </script>
+
 </body>
 </html>
